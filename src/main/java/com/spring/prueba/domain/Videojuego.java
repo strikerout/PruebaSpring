@@ -5,11 +5,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 /*
 * todas las clases con @entity indica que es una tabla en la base de datos, bien sea mariadb o
 *  mysql, esta es una clase con los estandares que pide jpa de creacion de*/
 @Entity
-
+@Table(name="VIDEOJUEGO")
 public class Videojuego {
 
     @Id
@@ -18,6 +21,8 @@ public class Videojuego {
     private String nombre;
     private String descripcion;
     private String imagenUrl;
+    @ManyToOne
+    private Distribuidor distribuidor;
 
     @Column(name="NOMBRE")
     public String getNombre() {
@@ -51,4 +56,11 @@ public class Videojuego {
 
     public void setId(Integer id) { this.id = id; }
 
+    public Distribuidor getDistribuidor() {
+        return distribuidor;
+    }
+
+    public void setDistribuidor(Distribuidor distribuidor) {
+        this.distribuidor = distribuidor;
+    }
 }
