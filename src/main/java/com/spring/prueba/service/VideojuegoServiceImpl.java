@@ -20,6 +20,18 @@ public class VideojuegoServiceImpl implements VideojuegoService {
 
     @Override
     public List<Videojuego> buscarDestacados(){
-       return videojuegoRepository.findAll();
+       return videojuegoRepository.buscarTodos();
      }
+
+    @Override
+    public List<Videojuego> buscarPorDistribuidor(int distribuidorId) {
+        return videojuegoRepository.buscarPorDistribuidor(distribuidorId);
+    }
+
+    @Override
+    public List<Videojuego> buscar(String consulta) {
+        return videojuegoRepository.findByNombreContaining(consulta);
+    }
+
+
 }
