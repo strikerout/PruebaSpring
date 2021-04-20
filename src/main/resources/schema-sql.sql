@@ -29,11 +29,8 @@ INSERT INTO DISTRIBUIDOR
 (1, 'Capcom', 'https://www.capcom.com'),
 (2, 'Marvel', 'https://www.marvel.com'),
 (3, 'Bandai Namco', 'https://www.bandai.com'),
-(4, 'GameForge', 'https://www.gameforge.com'),
-(5, 'Capcom', 'https://www.capcom.com'),
-(6, 'Marvel', 'https://www.marvel.com'),
-(7, 'Bandai Namco', 'https://www.bandai.com'),
-(8, 'GameForge', 'https://www.gameforge.com');
+(4, 'GameForge', 'https://www.gameforge.com');
+
 
 ALTER TABLE VIDEOJUEGO
 ADD COLUMN DISTRIBUIDOR_ID INT,

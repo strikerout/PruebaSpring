@@ -16,7 +16,7 @@ import javax.persistence.Table;
 public class Videojuego {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private String descripcion;
@@ -63,4 +63,6 @@ public class Videojuego {
     public void setDistribuidor(Distribuidor distribuidor) {
         this.distribuidor = distribuidor;
     }
+
+
 }

@@ -12,40 +12,46 @@
     <title>Tienda VJ</title>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark">
 
-        <a class="navbar-brand" th:href="@{/}">
-            <img src="img/logo.png" alt="" width="30" height="24">
-            Tienda VJ
-        </a>
-        <form th:action="@{/buscar}"class="d-flex">
-        <input autofocus="autofocus" name="q" class="form-control me-2" type="search" th:placeholder="${param.q}" aria-label="Search">
+    <a class="navbar-brand" th:href="@{/}">
+        <img src="img/logo.png" alt="" width="30" height="24">
+        Tienda VJ
+    </a>
+    <form th:action="@{/buscar}" class="d-flex">
+        <input autofocus="autofocus" name="q" class="form-control me-2" type="search" th:placeholder="${param.q}"
+               aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
+    </form>
 
 </nav>
 <div class="container mt-4 vj-destacados">
     <div class="row">
-        <div th:each="juego : ${videojuegos}"class="col-md-3">
+        <div id="crear" class="col col-md-12 text-right mb-4">
+            <a th:href="@{/videojuegos/crear}" class="btn btn-outline-success">Crear Videojuego</a>
+        </div>
+    </div>
+    <div class="row">
+        <div th:each="juego : ${videojuegos}" class="col-md-3 mb-4">
             <div class="card">
                 <img th:src="${juego.imagenUrl}"
                      class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 th:text="${juego.nombre}" class="card-title"></h5>
                     <p>
-                        <a th:href="@{/videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}"class="badge rounded-pill bg-info text-dark"th:text="${juego.distribuidor.nombre}"></a>
+                        <a th:href="@{/videojuegosPorDistribuidor(distribuidorId=${juego.distribuidor.id})}"
+                           class="badge rounded-pill bg-info text-dark" th:text="${juego.distribuidor.nombre}"></a>
                     </p>
                     <p th:text="${juego.descripcion}" class="card-text"></p>
                 </div>
-                    <div class="card-footer text-muted">
-                        <a href="#" class="btn btn-primary" >Leer más...</a>
-                    </div>
-
+                <div class="card-footer text-muted">
+                    <a href="#" class="btn btn-primary">Leer más...</a>
                 </div>
+
             </div>
         </div>
     </div>
-
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"

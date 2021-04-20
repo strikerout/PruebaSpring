@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface VideojuegoRepository extends JpaRepository<Videojuego, Integer> {
 
-    @Query("from Videojuego v order by v.id")
+    @Query("from Videojuego v order by v.nombre")
     List<Videojuego> buscarTodos();
     @Query("from Videojuego v where v.distribuidor.id = ?1 order by v.nombre")
     List<Videojuego> buscarPorDistribuidor(int distribuidorId);

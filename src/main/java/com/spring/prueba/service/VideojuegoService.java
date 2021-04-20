@@ -1,7 +1,6 @@
 package com.spring.prueba.service;
 
 import com.spring.prueba.domain.Videojuego;
-import com.spring.prueba.repository.VideojuegoRepository;
 
 import java.util.List;
 
@@ -11,4 +10,6 @@ public interface VideojuegoService {
     List<Videojuego> buscarDestacados();
     List<Videojuego> buscarPorDistribuidor(int distribuidorId);
     List<Videojuego> buscar(String consulta);
+
+    public Videojuego guardar(Videojuego videojuego);
 }

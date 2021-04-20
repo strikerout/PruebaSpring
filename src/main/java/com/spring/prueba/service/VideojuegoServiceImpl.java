@@ -4,7 +4,6 @@ import com.spring.prueba.domain.Videojuego;
 import com.spring.prueba.repository.VideojuegoRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,5 +32,6 @@ public class VideojuegoServiceImpl implements VideojuegoService {
         return videojuegoRepository.findByNombreContaining(consulta);
     }
 
+    public Videojuego guardar(Videojuego videojuego){return videojuegoRepository.save(videojuego);}
 
 }
