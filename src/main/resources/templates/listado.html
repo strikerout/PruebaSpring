@@ -12,12 +12,17 @@
     <title>Tienda VJ</title>
 </head>
 <body>
-<nav class="navbar navbar-dark bg-dark">
+<nav id="barra" class="navbar navbar-dark bg-dark">
 
     <a class="navbar-brand" th:href="@{/}">
         <img src="img/logo.png" alt="" width="30" height="24">
         Tienda VJ
     </a>
+
+        <div>
+            <a th:href="@{/videojuegos/crear}" class="btn btn-outline-success">Crear Videojuego</a>
+        </div>
+    </div>
     <form th:action="@{/buscar}" class="d-flex">
         <input autofocus="autofocus" name="q" class="form-control me-2" type="search" th:placeholder="${param.q}"
                aria-label="Search">
@@ -25,12 +30,9 @@
     </form>
 
 </nav>
+<br><br><br><br>
 <div class="container mt-4 vj-destacados">
-    <div class="row">
-        <div id="crear" class="col col-md-12 text-right mb-4">
-            <a th:href="@{/videojuegos/crear}" class="btn btn-outline-success">Crear Videojuego</a>
-        </div>
-    </div>
+
     <div class="row">
         <div th:each="juego : ${videojuegos}" class="col-md-3 mb-4">
             <div class="card">
